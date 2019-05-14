@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet", type="text/css", href="estilos/registro.css"/>
+
+    <title>Registro</title>
+</head>
+<header class="titulo">
+    <h1>Programa Apoyo Alimentario</h1>
+    <img src="imgs/logoud_0.png" alt="logoUd" width="100" height="100">
+    <h2>Registro</h2>
+</header>
+<body>
+<div class="login">
+    <form class="formulario" method="post" action="">
+        <div class="field-datos">
+            <input id="entradadNombres" type="text" placeholder="Nombres" required name="nombresUsuario">
+        </div>
+        <div class="field-datos">
+            <input id="entradadApellidos" type="text" placeholder="Apellidos" required name="apellidosUsuario">
+        </div>
+        <div class="field-datos">
+
+            <input id="entradadCorreo" type="email" placeholder="Correo Institucional" required name="correoUsuario">
+        </div>
+        <div class="field-datos">
+            <input id="entradadCodigo" type="text" placeholder="Código" required name="codigoUsuario">
+        </div>
+        <div class="field-datos">
+            <input id="contrasenaUsuario" type="password" placeholder="Contraseña" required name="contrasena">
+        </div>
+        <div>
+            <button id="btn-login" class="ingresar" type="submit" value="guardar">Registrarse</button>
+        </div>
+    </form>
+</div>
+</body>
