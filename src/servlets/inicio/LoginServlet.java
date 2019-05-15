@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
             PrintWriter out = resp.getWriter();
             //Se debe especificar el rol del usuario que ingreso al sistema, esto se hará depende del rol en la conexión de la base
             //de datos
-            out.write(armarPaginaPrincipal("estudiante"));
+            out.write(armarPaginaPrincipal("admin"));
             out.close();
         }else{
             resp.setContentType("text/html");
@@ -65,7 +65,7 @@ public class LoginServlet extends HttpServlet {
     //Este método armara la vista Principal del aplicativo, en caso de que sea un estudiante se le habilitaran algunas opciones
     //y se bloquearan otras, de igual forma si es administrador o revisor
     //rol: Rol del usuario en la base de datos, roles posibles: {estudiante, admin, revisor}
-    private String armarPaginaPrincipal(String rol){
+    public String armarPaginaPrincipal(String rol){
         String pagina = "";
         pagina += "<!DOCTYPE html>\n" +
                 "<html lang=\"en  \" dir=\"ltr\">\n" +
@@ -151,7 +151,7 @@ public class LoginServlet extends HttpServlet {
     //Se espera que la respuesta de este método se de haciendo la consulta de si existe la solicitud del estudiante registradad en la
     //base de datos.
     private boolean verificarSolicitud(){
-        boolean solicitud = true;
+        boolean solicitud = false;
         //Se realiza el proceso de consulta en la base de datos para saber si el usuario ya hizo la solicitud previamente
 
         return solicitud;

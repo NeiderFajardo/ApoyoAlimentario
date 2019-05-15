@@ -26,7 +26,8 @@ public class RealizarSolicitudServlet  extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //Obtener cada uno de los pdf subido por el estudiante
+        //Obtener cada uno de los pdf subido por el estudiante, se guarda en un objeto VO, para posteriormente ser guardados en
+        //la base de datos
         resp.sendRedirect("solicitudRealizada.html");
 
         InputStream inputstream = null;
