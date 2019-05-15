@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
             PrintWriter out = resp.getWriter();
             //Se debe especificar el rol del usuario que ingreso al sistema, esto se hará depende del rol en la conexión de la base
             //de datos
-            out.write(armarPaginaPrincipal("admin"));
+            out.write(armarPaginaPrincipal("estudiante"));
             out.close();
         }else{
             resp.setContentType("text/html");
@@ -130,7 +130,11 @@ public class LoginServlet extends HttpServlet {
                 "    <h3 id=\"banner\">Si no has realizado tú solicitud para ser parte del programa de apoyo alimetario,\n" +
                 "        puedes hacerla aquí:</h3>\n";
                 if (rol.equalsIgnoreCase("estudiante")) {
-                 pagina +=   "    <a href=\"realizarSolicitud.html\"><button id=\"registroSolicitud\" class=\"ingresar\" type=\"submit\" value=\"guardar\">Realizar Solicitud</button></a>\n";
+                    if(verificarSolicitud()){
+                        pagina += "    <a href=\"solicitudRealizada.html\"><button id=\"registroSolicitud\" class=\"ingresar\" type=\"submit\" value=\"guardar\">Realizar Solicitud</button></a>\n";
+                    }else {
+                        pagina += "    <a href=\"realizarSolicitud.html\"><button id=\"registroSolicitud\" class=\"ingresar\" type=\"submit\" value=\"guardar\">Realizar Solicitud</button></a>\n";
+                    }
                 }else if(rol.equalsIgnoreCase("admin") || rol.equalsIgnoreCase("revisor")){
                     pagina +=   "    <a href=\"#\"><button id=\"registroSolicitud\" class=\"ingresar\" disabled type=\"submit\" value=\"guardar\">Realizar Solicitud</button></a>\n";
                 }
@@ -140,5 +144,16 @@ public class LoginServlet extends HttpServlet {
 
 
         return pagina;
+    }
+
+    //Este método tiene el fin de buscar si ya se hizo una solicitud previamente, en caso afirmativo redirige al usaurio a una página
+    //que le indica que tiene que esperar a que su solicitud sea procesada, en caso contrario le permite realizar la solicitud
+    //Se espera que la respuesta de este método se de haciendo la consulta de si existe la solicitud del estudiante registradad en la
+    //base de datos.
+    private boolean verificarSolicitud(){
+        boolean solicitud = true;
+        //Se realiza el proceso de consulta en la base de datos para saber si el usuario ya hizo la solicitud previamente
+
+        return solicitud;
     }
 }

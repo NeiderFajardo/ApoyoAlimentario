@@ -19,7 +19,7 @@
 </div>
 <div class="cargaArchivos">
 
-    <form name="formulario" method="post" action=""
+    <form name="formulario" method="post" action="realizarSolicitudServlet"
           enctype="multipart/form-data"> <!-- ¡No olvides el enctype! -->
         <!-- Campo de selección de archivo -->
         <p>
@@ -47,10 +47,6 @@
             <input type="file" name="certificadoDiscapacidad" accept=".pdf" multiple>
         </p>
         <p>
-            Certificado desplazamiento forzoso:
-            <input type="file" name="certificadoDesplazamiento" accept=".pdf" multiple>
-        </p>
-        <p>
             Carta independiente:
             <input type="file" name="cartaIndependiente" accept=".pdf" multiple>
         </p>
@@ -58,7 +54,7 @@
             Certificado ingreso mensual:
             <input type="file" name="cartaIngresoMensual" accept=".pdf" multiple>
         </p>
-        <a href=""><button id="btn-login2" class="ingresar" type="submit" value="guardar">Registrar Solicitud</button></a>
+        <button id="btn-login2" class="ingresar" type="submit" value="guardar">Registrar Solicitud</button>
     </form>
 </div>
 </body>
